@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sage Lens</title>
+  <link rel="stylesheet" type="text/css" href="SageLens.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navbar-container">
+        <ul class="navbar">
+          <li><a href="SageLens.html">HOME</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="pricesSL.html">PRICES</a></li>
+          <li><a href="booking.html">BOOKING</a></li>
+          <li><a href="aboutSageLens.html">ABOUT</a></li>
+        </ul>
+        <div class="hamburger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="side-menu">
+    <ul>
+      <li><a href="SageLens.html">HOME</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="pricesSL.html">PRICES</a></li>
+      <li><a href="booking.html">BOOKING</a></li>
+      <li><a href="aboutSageLens.html">ABOUT</a></li>
+
+    </ul>
+  </div>
+  <div class="slideshow-container">
+    <div class="slide active-slide">
+      <img src="Banner2.jpg" alt="Image 1">
+    </div>
+    <div class="slide">
+      <img src="Banner1.jpg" alt="Image 2">
+    </div>
+    <div class="slide">
+      <img src="Potato.jpg" alt="Image 3">
+    </div>
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+
+  <section class="bio">
+    <h2>Synopsis and Bio</h2>
+    <!-- Biography content goes here -->
+  </section>
+
+  <!-- Additional sections and content go here -->
+
+  <script src="script.js"></script>
+
+  <div id="newsletter-popup" class="newsletter-popup">
+    <div class="newsletter-content">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates and special offers straight to your inbox.</p>
+      <form id="newsletter-form" class="newsletter-form" action="submit-newsletter.php" method="POST">
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <button id="close-popup" class="close-popup">Close</button>
+    </div>
+  </div>
+</body>
+</html>

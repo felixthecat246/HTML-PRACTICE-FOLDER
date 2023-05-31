@@ -1,0 +1,26 @@
+/* Calendar styles */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 400px; /* Adjust the width as needed */
+  }
+  
+  .day {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .available {
+    background-color: #c5e1a5;
+    cursor: pointer;
+  }
+  
+  .not-available {
+    background-color: #ef9a9a;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Natured Souls</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.slideshow-container').slick({
+        autoplay: true,
+        autoplaySpeed: 10000, // Slide change interval in milliseconds (10 seconds)
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="landing.html">HOME</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <h1>Welcome to Good Natured Souls</h1>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="Potato.jpg" alt="Photo 1">
+      </div>
+      <div class="slide">
+        <img src="LuzCam.jpg" alt="Photo 2">
+      </div>
+      <div class="slide">
+        <img src="Geese.jpg" alt="Photo 3">
+      </div>
+    </div>
+    <a href="gallery.html" class="view-more">View More</a>
+  </header>
+  
+  <section class="synopsis">
+    <h2>About Us</h2>
+    <p>Good Natured Souls is an up and coming media company focused on accelerating the dreams of artists while capturing moments on film and in various audio formats.</p>
+    <p>Home to the "I'm Not Supposed to be Here" podcast, "Sage Lens Photography," and more, we are excited to present all that we have to offer as a collective.</p>
+    <p>Follow us on social media:</p>
+    <div class="social-media">
+      <a href="#" class="social-link">Facebook</a>
+      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">Twitter</a>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 Good Natured Souls. All rights reserved.</p>
+  </footer>
+</body>
+</html>

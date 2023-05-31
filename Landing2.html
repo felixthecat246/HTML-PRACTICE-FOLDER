@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Good Natured Souls </title>
+  <link rel="stylesheet" type="text/css" href="landingPage.css">
+  <link rel="stylesheet" href="landingPage.css">
+</head>
+
+<div class="landing-page">
+  <div class="floating-message">
+    <h1>Welcome to Good Natured Souls </h1>
+    <p>Choose where you wish to go:</p>
+    <div class="card-container">
+      <div class="card" onmouseover="this.classList.add('floating-card')" onmouseout="this.classList.remove('floating-card')">
+        <a href="SageLens.html" class="btn">Sage Lens</a>
+      </div>
+      <div class="card-container">
+        <div class="card" onmouseover="this.classList.add('floating-card')" onmouseout="this.classList.remove('floating-card')">
+          <a href="Instbh.html" class="btn">I'm Not Supposed to Be Here</a>
+        </div>
+        <div class="card-container">
+          <div class="card" onmouseover="this.classList.add('floating-card')" onmouseout="this.classList.remove('floating-card')">
+            <a href="GNS.html" class="btn">Good Natured Souls</a>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  var btns = document.querySelectorAll('.btn');
+
+  // add event listener to each button
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function(event) {
+      // prevent the default action of the button
+      
+    });
+  });
+});
+
+  </script>
+</head>
+</body>
+</html>

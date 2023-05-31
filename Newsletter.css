@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .newsletter-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[type="email"] {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #333;
+  }
+  
+  button[type="submit"]:focus {
+    outline: none;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #999;
+  }
+  
+  :-moz-placeholder {
+    color: #999;
+    opacity: 1;
+  }
+  
+  ::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #999;
+  }
+  
