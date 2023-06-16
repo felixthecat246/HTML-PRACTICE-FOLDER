@@ -349,3 +349,19 @@ header {
     color: black;
     transform: translateY(-3px);
   }
+  footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
