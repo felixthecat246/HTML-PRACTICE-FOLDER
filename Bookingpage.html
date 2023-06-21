@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Photography Booking</title>
+  <link rel="stylesheet" type="text/css" href="BookingPage.css">
+
+</head>
+<body>
+  <header>
+    <h1>Photography Booking</h1>
+  </header>
+  <main>
+    <section id="packages">
+      <h2>Choose a Package</h2>
+      <div class="package">
+        <h3>Basic Package</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h3>Premium Package</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="book-now">Book Now</button>
+      </div>
+    </section>
+
+    <section id="customer-info" class="hidden">
+      <h2>Enter Your Information</h2>
+      <form id="booking-form">
+        <label for="first-name">First Name:</label>
+  <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+  <label for="last-name">Last Name:</label>
+  <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <!-- ...existing code... -->
+
+<section id="billing-info" class="hidden">
+    <h2>Enter Your Billing Information</h2>
+    <form id="billing-form">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+  
+      <label for="cardholder-name">Cardholder Name:</label>
+      <input type="text" id="cardholder-name" name="cardholder-name" placeholder="Enter cardholder name" required>
+  
+      <label for="expiration-date">Expiration Date:</label>
+      <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+  
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  
+  <!-- ...remaining code... -->
+  
+
+  <script src="Bookingpage.js"></script>
+</body>
+</html>

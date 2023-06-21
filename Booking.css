@@ -105,6 +105,34 @@ text-decoration: underline;
 }
 
 
+/* Styles for package section */
+#packages {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.package {
+  text-align: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.package h3 {
+  margin-top: 0;
+}
+
+/* Styles for customer info section */
+#customer-info {
+  text-align: center;
+}
+
+#customer-info.hidden {
+  display: none;
+}
+
 
 
 

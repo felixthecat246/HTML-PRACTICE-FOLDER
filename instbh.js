@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   closePopupButton.addEventListener("click", closePopup);
 });
+
 document.addEventListener('click', function(event) {
   const target = event.target;
   if (!sideMenu.contains(target) && !hamburgerMenu.contains(target)) {
@@ -79,10 +80,11 @@ document.addEventListener('click', function(event) {
     lines.forEach(line => line.classList.remove('active'));
   }
 });
+
 // Smooth scrolling behavior for older browsers or custom configurations
 document.addEventListener('DOMContentLoaded', function() {
   const scrollLinks = document.querySelectorAll('a[href^="#"]');
-  
+
   for (const scrollLink of scrollLinks) {
     scrollLink.addEventListener('click', function(e) {
       e.preventDefault();
@@ -92,4 +94,32 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+});
+
+// JavaScript code for handling click events and displaying the overlay
+const overlay = document.querySelector('.overlay');
+const overlayContent = document.querySelector('.overlay-content');
+const overlayTitle = overlayContent.querySelector('h2');
+const overlayDescription = overlayContent.querySelector('p');
+const overlayAudio = overlayContent.querySelector('audio');
+
+const episodeImages = document.querySelectorAll('.photo-wall img');
+
+episodeImages.forEach(image => {
+  image.addEventListener('click', () => {
+    const audioSrc = image.getAttribute('data-audio');
+    const title = image.getAttribute('data-title');
+    const description = image.getAttribute('data-description');
+
+    overlayTitle.textContent = title;
+    overlayDescription.textContent = description;
+    overlayAudio.src = audioSrc;
+
+    overlay.style.display = 'flex';
+  });
+});
+
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  overlayAudio.pause();
 });

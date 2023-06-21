@@ -1,10 +1,7 @@
 /* Reset default styles */
 html,
-html {
-  scroll-behavior: smooth;
-}
-
 body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -41,11 +38,7 @@ header {
 .navbar li a {
   color: white;
   text-decoration: none;
-
 }
-
-
-
 
 .hamburger-menu {
   display: flex;
@@ -125,29 +118,27 @@ header {
   }
 }
 
-  
-  /* Content container styles */
-  .content-container {
+/* Content container styles */
+.content-container {
   margin-left: 0;
   transition: margin-left 0.3s ease;
-  }
-  
-  /* Slideshow styles */
-  
-  .slide {
+}
+
+/* Slideshow styles */
+.slide {
   display: none;
   max-height: auto;
   max-width: fit-content;
-  }
-  
-  .slide img {
+}
+
+.slide img {
   width: 100%;
   height: auto;
   object-fit: fit-content;
-  }
-  
-  .prev,
-  .next {
+}
+
+.prev,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -157,85 +148,82 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   user-select: none;
-  }
-  
-  .prev {
-  left: auto;
-  }
-  
-  .next {
-  right: 0;
-  }
-  
-  .slideshow-container .active-slide {
+}
 
+.prev {
+  left: auto;
+}
+
+.next {
+  right: 0;
+}
+
+.slideshow-container .active-slide {
   position: relative;
   width: 100%;
   overflow: hidden;
-  }
-  
-  /* Slideshow animation */
-  @keyframes autoSlideAnimation {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    20% {
-      transform: translateX(-100%);
-      opacity: 1;
-    }
-    25% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  
-  .slideshow-container .slide {
-  animation: slideAnimation 0.5s ease-in-out;
-  }
-  
-  /* Slideshow controls */
-  .prev:hover,
-  .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Auto slide */
-  .slideshow-container[data-auto-slide="true"] {
-  animation: autoSlideAnimation 5s infinite;
-  }
-  
-  @keyframes autoSlideAnimation {
+}
+
+/* Slideshow animation */
+@keyframes autoSlideAnimation {
   0% {
-  transform: translateX(0);
-  opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
   20% {
-  transform: translateX(-100%);
-  opacity: 1;
+    transform: translateX(-100%);
+    opacity: 1;
   }
   25% {
-  transform: translateX(-100%);
-  opacity: 0;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
-  transform: translateX(0);
-  opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+.slideshow-container .slide {
+  animation: slideAnimation 0.5s ease-in-out;
+}
+
+/* Slideshow controls */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Auto slide */
+.slideshow-container[data-auto-slide="true"] {
+  animation: autoSlideAnimation 5s infinite;
+}
+
+@keyframes autoSlideAnimation {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .prev,
-  .next,
-  .slideshow-container:hover {
+  20% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.prev,
+.next,
+.slideshow-container:hover {
   animation: none;
-  }
-  
-  
+}
+
 .side-menu {
   position: fixed;
   right: -250px;
@@ -269,8 +257,7 @@ header {
   text-decoration: underline;
 }
 
-  
-  .newsletter-popup {
+.newsletter-popup {
   display: none;
   justify-content: center;
   align-items: center;
@@ -281,22 +268,22 @@ header {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999;
-  }
-  
-  .newsletter-content {
+}
+
+.newsletter-content {
   background-color: black;
   padding: 20px;
   text-align: center;
   color: white;
-  }
-  
-  .newsletter-form input[type="email"] {
+}
+
+.newsletter-form input[type="email"] {
   padding: 10px;
   width: 250px;
   margin-bottom: 10px;
-  }
-  
-  .newsletter-form button {
+}
+
+.newsletter-form button {
   padding: 10px 20px;
   background-color: black;
   color: white;
@@ -305,63 +292,103 @@ header {
   display: inline-block;
   justify-content: center;
   text-decoration: none;
-  border-radius: 5
-  px;
+  border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-left: 10px;
-  }
-  
-  body.newsletter-popup-open {
+}
+
+body.newsletter-popup-open {
   /* Add styles to control the appearance of the body when the popup is open */
-  }
-  
-  button[type="submit"]:hover {
+}
+
+button[type="submit"]:hover {
   background-color: whitesmoke;
   color: black;
-  }
-  
-  .close-popup {
+}
+
+.close-popup {
   margin-top: 10px;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
-  }
-  
-  .close-popup:hover {
+}
+
+.close-popup:hover {
   background-color: white;
   color: black;
-  }
+}
 
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-  }
-  
-  .btn:hover {
-    background-color: white;
-    color: black;
-    transform: translateY(-3px);
-  }
-  footer {
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer-links a {
-    margin: 10px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+
+/* CSS styles */
+body {
+  color: white;
+}
+
+/* Additional styles for specific elements */
+.header-content {
+  color: white;
+}
+
+.bio-section {
+  color: white;
+  line-height: 2.0;
+}
+
+.bio-content h2,
+.bio-content p {
+  color: white;
+}
+
+/* Navbar and other element styles */
+
+.slideshow-container {
+  margin-top: 40px; /* Adjust the spacing to prevent overlap */
+}
+
+
+
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center; /* Align the links to the right */
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}

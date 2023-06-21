@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta> charset="utf-8"</meta>
+  <meta charset="utf-8">
   <title>Booking Page</title>
   <link rel="stylesheet" type="text/css" href="Booking.css">
   <link rel="stylesheet" type="text/css" href="calendar.css">
@@ -24,60 +24,45 @@
     <li><a href="aboutSL.html">ABOUT</a></li>
   </ul>
 </div>
-
-
-
-
-  <form>
-    <div id="calendar"></div>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
-    
-    <label for="time">Time:</label>
-    <input type="time" id="time" name="time" required>
-    
-    <!-- Other booking form fields -->
-    
-    <input type="submit" value="Book Now">
-  </form>
-  <script src="calendar.js"></script>
-</head>
 <body>
-  <h1>Booking Page</h1>
-  <form id="booking-form">
-    <div>
+  <section id="packages">
+    <div class="package">
+      <h3>Package 1</h3>
+      <p>Description of Package 1</p>
+      <button class="book-now">Book Now</button>
+    </div>
+    <div class="package">
+      <h3>Package 2</h3>
+      <p>Description of Package 2</p>
+      <button class="book-now">Book Now</button>
+    </div>
+  </section>
+
+  
+
+  <section id="customer-info" class="hidden">
+    <h2>Enter your information</h2>
+    <form id="booking-form">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-      <label for="payment-method">Payment Method:</label>
-      <select id="payment-method" name="payment-method" required>
-        <option value="credit-card">Credit Card</option>
-        <option value="paypal">PayPal</option>
-        <option value="bank-transfer">Bank Transfer</option>
-      </select>
-    </div>
-    <div>
-      <label for="credit-card-number">Credit Card Number:</label>
-      <input type="text" id="credit-card-number" name="credit-card-number">
-    </div>
-    <div>
-      <label for="expiry-date">Expiry Date:</label>
-      <input type="text" id="expiry-date" name="expiry-date">
-    </div>
-    <div>
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" name="cvv">
-    </div>
-    <div>
-      <input type="submit" value="Book Now">
-    </div>
-  </form>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="calendar-container"></div> <!-- Container for the calendar -->
+  </section>
 
   <script src="BookingScript.js"></script>
+
+  <script src="calendar.js"></script>
+
+
+  
+
+
+
 </body>
 </html>

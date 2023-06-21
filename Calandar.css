@@ -1,4 +1,3 @@
-* 
 html,
 html {
   scroll-behavior: smooth;
@@ -7,65 +6,103 @@ html {
 * {
   margin: 0;
   padding: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-.section
-{
+
+.section {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: black;
-
 }
 
-section.before
-{
-content: "";
-position: absolute;
-width: 400px;
-height: 400px;
-background: linear-gradient(#ffc197,#e91e63);
-border-radius:50%;
-  }
-
-section.after
-{
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(#ffc197,#e91e63 )
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-
+.calendar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 /* Calendar styles */
 #calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    width: 400px; /* Adjust the width as needed */
-  }
-  
-  .day {
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  .available {
-    background-color: #c5e1a5;
-    cursor: pointer;
-  }
-  
-  .not-available {
-    background-color: #ef9a9a;
-    cursor: not-allowed;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  width: 400px; /* Adjust the width as needed */
+}
+
+.day {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.available {
+  background-color: #c5e1a5;
+  cursor: pointer;
+}
+
+.not-available {
+  background-color: #ef9a9a;
+  cursor: not-allowed;
+}
+/* calendar.css */
+
+/* Calendar container */
+#calendar-container {
+  margin-top: 20px;
+}
+
+/* Month and year header */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Calendar table */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header */
+.calendar-table th {
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Table cells */
+.calendar-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Hover effect on table cells */
+.calendar-table td:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Selected date style */
+.calendar-table td.selected {
+  background-color: #337ab7;
+  color: #fff;
+}
