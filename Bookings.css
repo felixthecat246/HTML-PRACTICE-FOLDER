@@ -1,0 +1,280 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Overall theme */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    background-size: cover;
+    color: white;
+  }
+  
+  /* Header section */
+  header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+  }
+  
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: black;
+    transition: right 0.3s ease;
+  }
+  
+  .side-menu.open {
+    right: 0;
+  }
+  
+  .side-menu ul {
+    padding: 20px;
+    right: 20px;
+  }
+  
+  .side-menu ul li {
+    margin-bottom: 10px;
+  }
+  
+  .side-menu ul li a {
+    text-decoration: underline;
+    color: white;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .side-menu {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: black;
+    transition: left 0.3s ease;
+    z-index: 9999;
+  }
+  
+  .side-menu.open {
+    right: 0;
+  }
+  
+  .side-menu ul {
+    padding: 20px;
+  }
+  
+  .side-menu ul li {
+    margin-bottom: 10px;
+  }
+  
+  .side-menu ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .side-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styles for package section */
+  #packages {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .package {
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .package h3 {
+    margin-top: 0;
+  }
+  
+  /* Styles for customer info section */
+  #customer-info {
+    text-align: center;
+  }
+  
+  #customer-info.hidden {
+    display: none;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .booking-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Calendar styles */
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .day {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .available {
+    background-color: #c5e1a5;
+    cursor: pointer;
+  }
+  
+  .not-available {
+    background-color: #ef9a9a;
+    cursor: not-allowed;
+  }
+  
+  /* Payment form styles */
+  .payment-form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-button:hover {
+    background-color: #45a049;
+  }
+  
+  .pricing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--eerie-black-2_85);
+    mix-blend-mode: multiply;
+    z-index: -1;
+  }
+  
+  .pricing .section-title {
+    color: var(--white);
+  }
+  
+  .pricing .section-text {
+    margin: 15px 55px;
+    color: var(--white_50);
+  }
+  
+  .pricing .grid-list {
+    padding-inline: 20px;
+  }
+  
+  .pricing .grid-list > li.active {
+    animation: popup 0.75s ease forwards;
+  }
+  
+  @keyframes popup {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .pricing-card {
+    background-color: var(--indian-yellow_10);
+    padding: 20px 25px;
+    border-radius: var(--radius-5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .pricing-card .card-banner {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .pricing-card .wrapper {
+    order: 1;
+  }
+  
+  .pricing-card .h3 {
+    --fs-24: 2rem;
+    margin-block-end: 8px;
+  }
+  
+  .pricing-card .card-price {
+    color: var(--indian-yellow);
+    font-family: var(--ff-oswald);
+    font-size: var(--fs-30);
+    font-weight: var(--fw-500);
+  }
+  

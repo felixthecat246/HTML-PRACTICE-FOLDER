@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Photography Booking</title>
+  <link rel="stylesheet" type="text/css" href="Bookings.css">
+  <style>
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    .pricing-card {
+      background-color: var(--indian-yellow_10);
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: scale(1.05);
+      background-color: var(--indian-yellow_20);
+    }
+  
+    .pricing-card .card-banner {
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+  
+    .pricing-card .card-banner img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .pricing-card .h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+  
+    .pricing-card .card-price {
+      color: var(--indian-yellow);
+      font-size: 30px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  
+    .pricing-card .card-text {
+      margin: 0;
+      font-size: 14px;
+    }
+  
+    .pricing-card .card-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: var(--indian-yellow);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .pricing-card .card-btn:hover {
+      background-color: var(--indian-yellow-darker);
+    }
+
+    .calendar-container {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+       
+    }
+
+    .calendar-container.show {
+      display: block;
+    }
+
+    #calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: white;
+    }
+  
+    .day {
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  
+    .available {
+      background-color: #c5e1a5;
+      cursor: pointer;
+    }
+  
+    .not-available {
+      background-color: #ef9a9a;
+      cursor: not-allowed;
+    }
+    /* Reset default styles */
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Overall theme */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  background-size: cover;
+}
+
+/* Header section */
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 2% 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.line {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(-50%, -50%);
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-container .hamburger-menu {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .navbar-container .hamburger-menu .line {
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  .navbar-container .hamburger-menu .line:first-child {
+    transform-origin: top left;
+    transform: rotate(45deg);
+  }
+
+  .navbar-container .hamburger-menu .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-menu .line:last-child {
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+  }
+
+  .navbar-container .hamburger-menu.active .line {
+    background-color: white;
+  }
+
+  .navbar-container .hamburger-menu.active .line:first-child {
+    transform: rotate(45deg);
+  }
+
+  .navbar-container .hamburger-menu.active .line:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .navbar-container .hamburger-menu.active .line:nth-child(2) {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+}
+
+/* Content container styles */
+.content-container {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Slideshow styles */
+.slide {
+  display: none;
+  max-height: auto;
+  max-width: fit-content;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: fit-content;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev {
+  left: auto;
+}
+
+.next {
+  right: 0;
+}
+
+.slideshow-container .active-slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slideshow animation */
+@keyframes autoSlideAnimation {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slideshow-container .slide {
+  animation: slideAnimation 0.5s ease-in-out;
+}
+
+/* Slideshow controls */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Auto slide */
+.slideshow-container[data-auto-slide="true"] {
+  animation: autoSlideAnimation 5s infinite;
+}
+
+@keyframes autoSlideAnimation {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.prev,
+.next,
+.slideshow-container:hover {
+  animation: none;
+}
+
+.side-menu {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: black;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.side-menu li {
+  margin-bottom: 10px;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.newsletter-content {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 10px;
+}
+
+body.newsletter-popup-open {
+  /* Add styles to control the appearance of the body when the popup is open */
+}
+
+button[type="submit"]:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.close-popup {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+
+/* CSS styles */
+body {
+  color: white;
+}
+
+/* Additional styles for specific elements */
+.header-content {
+  color: white;
+}
+
+.bio-section {
+  color: white;
+  line-height: 2.0;
+}
+
+.bio-content h2,
+.bio-content p {
+  color: white;
+}
+
+/* Navbar and other element styles */
+
+.slideshow-container {
+  margin-top: 40px; /* Adjust the spacing to prevent overlap */
+}
+
+
+
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center; /* Align the links to the right */
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+  </style>
+</head>
+<body></head>
+    <body>
+      <header>
+        <nav>
+          <div class="navbar-container">
+            <ul class="navbar">
+              <li><a href="SageLens.html">HOME</a></li>
+              <li><a href="contact.html">CONTACT</a></li>
+              <li><a href="pricesSL.html">PRICES</a></li>
+              <li><a href="booking.html">BOOKING</a></li>
+              <li><a href="aboutSageLens.html">ABOUT</a></li>
+            </ul>
+            <div class="hamburger-menu">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+  <section class="pricing" id="pricing" aria-label="pricing">
+    <div class="container">
+      <div class="pricing-card">
+        <div class="card-banner">
+          <img src="Absent.jpg" alt="Bundle 1">
+        </div>
+        <h3 class="h3">Basic Bundle</h3>
+        <p class="card-price">$99</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a href="#" class="card-btn" aria-label="Select Package" onclick="toggleCalendar('calendar1')">Select Package</a>
+        <div id="calendar1" class="calendar-container">
+          <div id="calendar"></div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="card-banner">
+          <img src="Bazz.jpg" alt="Bundle 2">
+        </div>
+        <h3 class="h3">Advanced Bundle</h3>
+        <p class="card-price">$199</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a href="#" class="card-btn" aria-label="Select Package" onclick="toggleCalendar('calendar2')">Select Package</a>
+        <div id="calendar2" class="calendar-container">
+          <div id="calendar"></div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="card-banner">
+          <img src="Ajonte.jpg" alt="Bundle 3">
+        </div>
+        <h3 class="h3">Premium Bundle</h3>
+        <p class="card-price">$299</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a href="#" class="card-btn" aria-label="Select Package" onclick="toggleCalendar('calendar3')">Select Package</a>
+        <div id="calendar3" class="calendar-container">
+          <div id="calendar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="footer-links">
+    <a href="Landing2.html">GNS</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>&copy; 2023 Your Company. All rights reserved.</p>
+</footer>
+
+
+  <script src="Bookingpage.js"></script>
+  <script>
+    function toggleCalendar(calendarId) {
+      var calendar = document.getElementById(calendarId);
+      calendar.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
